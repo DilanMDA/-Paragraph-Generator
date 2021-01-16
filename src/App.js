@@ -5,8 +5,9 @@ function App() {
   const [text, setText] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let amount = parseInt(count);
-    let amount = Math.floor(count);
+    // console.log(count);
+    let amount = count;
+    // let amount = Math.floor(count);
     if (count <= 0) {
       amount = 1;
     }
@@ -15,6 +16,10 @@ function App() {
     }
     setText(data.slice(0, amount));
   };
+  // const handleOnChange =(e) =>{
+  //   setCount(e.target.value);
+
+  // }
   return (
     <section className='section-center'>
       <h3>introduction react hooks?</h3>
@@ -25,7 +30,7 @@ function App() {
           name='amount'
           id='amount'
           value={count}
-          onChange={(e) => setCount(e.target.value)}
+          onChange={(e) => setCount(parseInt(e.target.value))}
         />
         <button className='btn'>generate</button>
       </form>
